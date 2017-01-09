@@ -1,1 +1,3 @@
+markdown: readcarpet
+baseurl: /Blog
 theme: jekyll-theme-minimal
