@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <meta charset="utf-8">
-   <title>{{ page.title }} - {{ site.title }}</title>
-   <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/style.css" >
-   <link rel="alternate" type="application/atom+xml" href="{{ site.path }}/feed.xml" title="News Feed">
-</head>
-<body>
+---
+layout: post
+title: Welcome
+---
 
-<div class="container">
-<header class="masthead">
-   <h3 class="masthead-title">
-     <a href="{{ site.path }}">{{ site.title }}</a>
-     <small>
-        &nbsp;&nbsp;&nbsp;<a href="{{ site.path }}/archive.html">Archive</a>
-     </small>
-     <small>
-       &nbsp;&nbsp;&nbsp;<a href="{{ site.path }}/feed.xml">Portfolio</a>
-     </small>
-     <small>
-       &nbsp;&nbsp;&nbsp;<a href="https://github.com/henrythemes/jekyll-minimal-theme">About Me</a>
-     </small>
-   </h3>
-</header>
 
-<div id="content">
-  {{ content }}
-</div>
+{% for post in site.posts %}
 
-</div><!-- .container -->
-</body>
-</html>
+<article class='post'>
+  <h1 class='post-title'>
+    <a href="{{ site.path }}{{ post.url }}">
+      {{ post.title }}
+    </a>
+  </h1>
+  <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
+  {{ post.content }}
+</article>
+
+{% endfor %}
