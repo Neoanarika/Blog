@@ -1,3 +1,4 @@
 markdown: readcarpet
 baseurl: /Blog
+exclude : ['README.md']
 theme: jekyll-theme-minimal
